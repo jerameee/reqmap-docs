@@ -1,17 +1,34 @@
-# Welcome to MkDocs
+# Overview
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+ReqMap is a Flask-based web application for managing and visualizing requirements. It allows users to create, update, and delete requirements, as well as view a traceability diagram of the requirements.
 
-## Commands
+## Architecture
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+The application follows a Model-View-Controller (MVC) architecture:
 
-## Project layout
+## Dependencies
 
     mkdocs.yml    # The configuration file.
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
+## Database Model
+
+## Key Functionalities
+
+### Creating a Requirement
+
+### Updating a Requirement
+
+### Deleting a Requirement
+
+### Generating Traceability Diagram
+
+## Frontend
+
+## Testing
+
+## Running the Application
+
+## Future Improvements
