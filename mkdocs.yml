@@ -4,7 +4,7 @@ theme:
   version: 9.5.33
   features:
     - navigation.sections
-    - toc.integrate 
+    - toc.integrate
     - navigation.top
     - search.suggest
     - search.highlight
@@ -27,6 +27,7 @@ theme:
         name: Switch to light mode
       primary: teal
       accent: lime
+
 extra:
   generator: false
   social:
@@ -39,6 +40,9 @@ extra:
 
 
 markdown_extensions:
+  - attr_list
+  - def_list
+  - md_in_html
   - pymdownx.highlight:
       use_pygments: true
       anchor_linenums: true
