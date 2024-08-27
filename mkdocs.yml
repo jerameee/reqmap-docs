@@ -3,9 +3,8 @@ theme:
   name: material
   version: 9.5.33
   features:
-    - navigation.tabs
     - navigation.sections
-    - toc.integrate
+    - toc.integrate 
     - navigation.top
     - search.suggest
     - search.highlight
@@ -29,6 +28,7 @@ theme:
       primary: teal
       accent: lime
 extra:
+  generator: false
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/jerameee
@@ -36,6 +36,7 @@ extra:
       link: https://www.linkedin.com/in/jeremy-f-570672239/
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/jeramee_tech
+
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -46,3 +47,5 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+
+copyright: Copyright &copy; 2024 Jeremy Jones
