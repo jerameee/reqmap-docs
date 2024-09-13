@@ -27,6 +27,7 @@ The core data model is the ```Requirement``` class, defined in ```models.py```
 
 ``` py
 class Requirement(db.Model):
+
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(150), nullable=False)
     description = db.Column(db.Text, nullable=False)
@@ -49,6 +50,7 @@ Endpoint: `POST/requirements`
 
 ``` py
 @app.route('/requirements', methods=['POST'])
+
 def create_requirement():
     data = request.get_json()
     new_req = Requirement(
@@ -59,6 +61,7 @@ def create_requirement():
     )
     db.session.add(new_req)
     db.session.commit()
+
     return jsonify({'message': 'Requirement created successfully!'}), 201
 ```
 
@@ -68,6 +71,7 @@ Endpoint: `PUT/requirements/<init:id>`
 
 ``` py
 @app.route('/requirements/<int:id>', methods=['PUT'])
+
 def update_requirement(id):
     data = request.get_json()
     req = Requirement.query.get_or_404(id)
@@ -77,6 +81,7 @@ def update_requirement(id):
     req.status = data['status']
     req.version += 1
     db.session.commit()
+
     return jsonify({'message': 'Requirement updated successfully!'})
 ```
 
@@ -86,10 +91,12 @@ Endpoint: `PUT/requirements/<init:id>`
 
 ``` py
 @app.route('/requirements/<int:id>', methods=['DELETE'])
+
 def delete_requirement(id):
     req = Requirement.query.get_or_404(id)
     db.session.delete(req)
     db.session.commit()
+
     return jsonify({'message': 'Requirement deleted successfully!'})
 ```
 
@@ -99,6 +106,7 @@ Endpoint: `GET /requirements/trace`
 
 ```py
 @app.route('/requirements/trace', methods=['GET'])
+
 def trace_requirements():
     requirements = Requirement.query.all()
     graph = nx.DiGraph()
@@ -119,6 +127,7 @@ def trace_requirements():
     plt.savefig(output, format='png')
     plt.close()
     output.seek(0)
+
     return send_file(output, mimetype='image/png')
 ```
 
